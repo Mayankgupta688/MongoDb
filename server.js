@@ -19,6 +19,8 @@ var controller = require("./controller");
 controller.init(app);
 
 var data = require("./data");
+data.addData();
+data.findData();
  
 // Server is created and express is used as a middleware to configure the routes
 var server = http.createServer(app);
