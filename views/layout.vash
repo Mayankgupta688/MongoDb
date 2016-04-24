@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link href="./css/index.css" rel='stylesheet'/>
+
+    <script src="./lib/requirejs/require.js" data-main="./scripts/config.js"></script>
+
+  </head>
+  <body>
+    <div>
+      <h2>This is my Layout</h2>
+      <div ng-view></ng-view>
+    </div>
+  </body>
+</html>
