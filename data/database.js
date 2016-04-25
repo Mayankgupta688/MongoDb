@@ -1,7 +1,7 @@
 (function(database) {
 
 	var mongodb = require('mongodb');
-	var mongoUrl = "mongodb://localhost:27017/Employee";
+	var mongoUrl = "mongodb://user:a110cate@ds013848.mlab.com:13848/medical";
 	var theDb = null;
 
 	database.getDb = function(next) {
