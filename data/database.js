@@ -1,6 +1,6 @@
 (function(database) {
 
-	var mongodb = require('mongodb');
+	var MongoClient = require('mongodb').MongoClient;
 	var mongoUrl = "mongodb://user:a110cate@ds013848.mlab.com:13848/medical";
 	var theDb = null;
 
@@ -9,7 +9,7 @@
 			next(null, theDb)
 		}
 		else {
-			mongodb.MongoClient.connect(mongoUrl, function(err, db) {
+			MongoClient.connect(mongoUrl, function(err, db) {
 				if(err) {
 					next(err, null)
 				}

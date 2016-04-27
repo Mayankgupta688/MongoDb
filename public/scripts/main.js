@@ -7,6 +7,9 @@ define('main', [], function(angular) {
     $routeProvider.when('/', {
       templateUrl: 'index/index.vash',
       controller: 'indexController'
+    }).when('/:name', {
+      templateUrl: 'index/index.vash',
+      controller: 'indexController'
     }).otherwise({
       redirectTo: '/'
     });

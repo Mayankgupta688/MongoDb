@@ -12,6 +12,8 @@ var app = express();
 
 app.set("view engine", "vash");
 
+app.set('views', __dirname + '/views')
+
 app.use(express.static(__dirname + '/public'));
 
 var controller = require("./controller");
@@ -19,8 +21,17 @@ var controller = require("./controller");
 controller.init(app);
 
 var data = require("./data");
-data.addData();
-data.findData();
+
+// This is the middleware used for error handeling
+// ** This should be used only when all routes has been attached to "app"
+// ** If done before that the middleware is not attached to the routes.
+
+app.use(function(err, req, res, next) {
+  console.log("Error Occured");
+  res.send('That an Error');
+});
+
+data.addData(); 
  
 // Server is created and express is used as a middleware to configure the routes
 var server = http.createServer(app);
