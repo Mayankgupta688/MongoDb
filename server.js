@@ -4,6 +4,8 @@ var http = require('http');
 // Express act as a routing Engine 
 var express = require('express');
 
+var bodyParser = require('body-parser')
+
 // Used as a templating engine
 var vash = require('vash');
 
@@ -15,6 +17,8 @@ app.set("view engine", "vash");
 app.set('views', __dirname + '/views')
 
 app.use(express.static(__dirname + '/public'));
+
+app.use(bodyParser()));
 
 var controller = require("./controller");
 
