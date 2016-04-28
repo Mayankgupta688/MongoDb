@@ -18,7 +18,11 @@ app.set('views', __dirname + '/views')
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(bodyParser()));
+// Body parser shall allow user to post a form data to the server 
+//Values shall be available as a part of "req.body.name"
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 var controller = require("./controller");
 
@@ -31,7 +35,6 @@ var data = require("./data");
 // ** If done before that the middleware is not attached to the routes.
 
 app.use(function(err, req, res, next) {
-  console.log("Error Occured");
   res.send('That an Error');
 });
 
