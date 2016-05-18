@@ -38,7 +38,7 @@ app.use(function(err, req, res, next) {
   res.send('That an Error');
 });
 
-data.addData(); 
+data.runCursor();
  
 // Server is created and express is used as a middleware to configure the routes
 var server = http.createServer(app);

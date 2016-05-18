@@ -1,7 +1,7 @@
 (function(database) {
 
 	var MongoClient = require('mongodb').MongoClient;
-	var mongoUrl = "mongodb://user:a110cate@ds013848.mlab.com:13848/medical";
+	var mongoUrl = "mongodb://user:a110cate@ds027729.mlab.com:27729/testdata";
 	var theDb = null;
 
 	database.getDb = function(next) {
